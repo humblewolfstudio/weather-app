@@ -1,10 +1,19 @@
 :root {
   --background-color: #282c34;
+  background-color: #282c34;
 }
 
 .App {
   text-align: center;
   overflow: hidden;
+  height: 100vh;
+  max-height: -webkit-fill-available;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 5px solid #282c34;
+  border-radius: 25px;
+  background-color: #282c34;
 }
 
 .App-logo {
@@ -20,7 +29,7 @@
 
 .App-header {
   background-color: var(--background-color);
-  min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
