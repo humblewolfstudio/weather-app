@@ -39,7 +39,7 @@ export default function TemperatureTab() {
     return (
         <div className='temperature-content'>
             <div className="location-wrapper">
-                <label className='location'>Barcelona</label>
+                <label className='location'>{Context.cityName}</label>
             </div>
             <div className="temperature-wrapper">
                 <label className='temperature'>{temperature}º</label>

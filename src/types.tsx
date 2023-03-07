@@ -1,5 +1,6 @@
 export interface ForecastContextInterface {
-    data?: Forecast
+    data?: Forecast,
+    cityName: string
 }
 
 export interface Forecast {
