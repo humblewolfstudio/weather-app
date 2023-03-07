@@ -1,0 +1,24 @@
+.temperature-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.location {
+    font-size: 25px;
+}
+
+.temperature {
+    font-size: 40px;
+}
+
+.max-min-temperature {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.max-min-temperature > label {
+    margin-left: 10px;
+    margin-right: 10px;
+}

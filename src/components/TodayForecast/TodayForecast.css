@@ -1,0 +1,29 @@
+.today-forecast-content {
+    height: 25vh;
+    width: 90%;
+    background-color: rgb(127, 204, 255);
+}
+
+.top-text-wrapper {
+    border-bottom: 1px solid white;
+    display: flex;
+    min-height: 40px;
+}
+
+.top-text {
+    margin: 10px 10px 10px 10px;
+    overflow-wrap: break-word;
+    overflow: auto;
+    text-align: left;
+}
+
+.forecast-wrapper {
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+    height: 20vh;
+}
+
+.forecast-wrapper::-webkit-scrollbar {
+    display: none;
+}
