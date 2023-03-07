@@ -12,13 +12,13 @@
     font-size: 40px;
 }
 
-.max-min-temperature {
+.date {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.max-min-temperature > label {
+.date>label {
     margin-left: 10px;
     margin-right: 10px;
 }

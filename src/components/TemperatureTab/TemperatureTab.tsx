@@ -3,9 +3,15 @@ import { ForecastContext } from '../../App';
 import { ForecastContextInterface } from '../../types';
 import './TemperatureTab.css'
 
+const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+];
+
 export default function TemperatureTab() {
-    const [maxTemperature, setMaxTemperature] = useState(10);
-    const [minTemperature, setMinTemperature] = useState(0);
+    const [date, setDate] = useState('');
+    const [month, setMonth] = useState('');
     const [temperature, setTemperature] = useState(0);
 
     const Context: ForecastContextInterface = useContext(ForecastContext)!;
@@ -15,6 +21,9 @@ export default function TemperatureTab() {
         if (data == undefined) return;
 
         setTemperature(data.current_weather.temperature);
+        var today = new Date();
+        setDate(dayNames[today.getDay()] + ", " + today.getDate());
+        setMonth(monthNames[today.getMonth()]);
 
         /*SEARCH BY HOURS AND DATES
         for (var i in data!.hourly.time) {
@@ -35,9 +44,9 @@ export default function TemperatureTab() {
             <div className="temperature-wrapper">
                 <label className='temperature'>{temperature}º</label>
             </div>
-            <div className="max-min-temperature">
-                <label className='max'>Max: {maxTemperature}</label>
-                <label className='min'>Min: {minTemperature}</label>
+            <div className="date">
+                <label className='max'>{date}</label>
+                <label className='min'>{month}</label>
             </div>
         </div>
     )

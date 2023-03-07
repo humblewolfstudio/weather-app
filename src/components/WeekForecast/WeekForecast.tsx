@@ -7,6 +7,8 @@ import './WeekForecast.css'
 
 var madeForecast = false;
 
+const dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
 const calculateMedium = (array: Array<number>) => {
     var n = array.length;
     var sum = 0;
@@ -16,27 +18,6 @@ const calculateMedium = (array: Array<number>) => {
     }
 
     return Math.round(sum / n * 10) / 10;
-}
-
-const getDayName = (i: number): string => {
-    switch (i) {
-        case 0:
-            return "Monday";
-        case 1:
-            return "Tuesday";
-        case 2:
-            return "Wednesday";
-        case 3:
-            return "Thursday";
-        case 4:
-            return "Friday";
-        case 5:
-            return "Saturday";
-        case 6:
-            return "Sunday";
-        default:
-            return "";
-    }
 }
 
 export default function WeekForecast() {
@@ -53,7 +34,7 @@ export default function WeekForecast() {
 
         for (var i = 0; i < 7; i++) {
             var dayTemperatures = data.hourly.temperature_2m.slice(24 * i, 24 * (i + 1));
-            var dailyForecast: WeeklyForecastInterface = { weekDay: getDayName(i), mediumTemperature: calculateMedium(dayTemperatures) + "º" };
+            var dailyForecast: WeeklyForecastInterface = { weekDay: dayNames[i], mediumTemperature: calculateMedium(dayTemperatures) + "º" };
             temperatures.push(dailyForecast);
         }
         setWeekTemperatures(temperatures);
