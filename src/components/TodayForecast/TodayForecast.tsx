@@ -18,11 +18,13 @@ export default function TodayForecast() {
         var data = Context.data;
         if (data == undefined) return;
         var today = new Date();
-        var nElements = 24 - today.getHours();
+        var nElements = 24;
         var temperatures = [];
         for (var i = 0; i < nElements; i++) {
             var hourlyForecast: HourlyForecastInterface = { time: '0h', temperature: '0º' };
-            hourlyForecast!.time = (Number(today.getHours() + i).toString().length < 2 ? '0' + Number(today.getHours() + i) : Number(today.getHours() + i)) + 'h';
+            var hora = today.getHours() + i;
+            if (hora > 23) hora -= 24;
+            hourlyForecast!.time = (hora.toString().length < 2 ? '0' + hora : hora) + 'h';
             hourlyForecast!.temperature = data.hourly.temperature_2m[Number(today.getHours() + i)] + 'º'
             temperatures.push(hourlyForecast!);
         }
