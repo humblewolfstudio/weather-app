@@ -28,7 +28,6 @@ export default function WeekForecast() {
         if (madeForecast) return;
         var data = Context.data;
         if (data == undefined) return;
-        console.log(data);
 
         var temperatures = [];
 
