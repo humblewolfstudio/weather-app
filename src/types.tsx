@@ -34,3 +34,8 @@ export interface HourlyForecastInterface {
     time: string,
     temperature: string
 }
+
+export interface WeeklyForecastInterface {
+    weekDay: string,
+    mediumTemperature: string
+}

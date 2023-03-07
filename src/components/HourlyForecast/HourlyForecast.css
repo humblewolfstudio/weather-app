@@ -5,4 +5,15 @@
     align-items: center;
     margin-left: 10px;
     margin-right: 10px;
+    height: 80%;
+    border: 1px solid white;
+    padding: 0px 10px 0px 10px;
+}
+
+.hourly-wrapper:first-child {
+    margin-left: 7.5px;
+}
+
+.hourly-wrapper:last-child {
+    margin-right: 7.5px;
 }

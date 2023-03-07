@@ -17,9 +17,7 @@ export default function TodayForecast() {
         if (madeForecast) return;
         var data = Context.data;
         if (data == undefined) return;
-        console.log(data);
         var today = new Date();
-        var div = todayForecastRef.current;
         var nElements = 24 - today.getHours();
         var temperatures = [];
         for (var i = 0; i < nElements; i++) {
@@ -34,12 +32,12 @@ export default function TodayForecast() {
 
     return (
         <div className="today-forecast-content">
-            <div className="top-text-wrapper">
-                <label className='top-text'></label>
+            <div className="title-wrapper">
+                <label>Today Forecast</label>
             </div>
-            <div ref={todayForecastRef} className="forecast-wrapper">
+            <div ref={todayForecastRef} className="today-forecast-wrapper">
                 {temperaturesHourly.map(function (object, i) {
-                    return <HourlyForecast time={object.time} temperature={object.temperature} />
+                    return <HourlyForecast key={i} time={object.time} temperature={object.temperature} />
                 })}
             </div>
         </div>

@@ -1,26 +1,26 @@
-.today-forecast-content {
+.week-forecast-content {
     height: 25vh;
     width: 90%;
     background-color: rgb(127, 204, 255);
     display: flex;
     flex-direction: column;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .title-wrapper {
     border-bottom: 1px solid white;
     width: 60%;
     align-self: center;
+    margin-bottom: 5px;
 }
 
-.today-forecast-wrapper {
+.daily-forecast-wrapper {
     display: flex;
-    flex-direction: row;
-    overflow: scroll;
-    height: 20vh;
-    margin-top: 25px;
+    flex-direction: column;
+    overflow: auto;
 }
 
-.today-forecast-wrapper::-webkit-scrollbar {
+.daily-forecast-wrapper::-webkit-scrollbar {
     display: none;
 }

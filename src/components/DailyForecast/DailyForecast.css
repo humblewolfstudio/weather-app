@@ -1,0 +1,25 @@
+.daily-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 5px;
+    border-top: 1px solid white;
+    margin-bottom: 5px;
+}
+
+.daily-wrapper:first-child {
+    border-top: none;
+}
+
+.daily-wrapper:last-child {
+    margin-bottom: 10px;
+}
+
+.daily-wrapper>label:first-child {
+    margin-left: 10px;
+}
+
+.daily-wrapper>label:last-child {
+    margin-right: 10px;
+}

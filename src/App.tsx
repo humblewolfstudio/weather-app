@@ -4,6 +4,7 @@ import './App.css';
 import TemperatureTab from './components/TemperatureTab/TemperatureTab';
 import TodayForecast from './components/TodayForecast/TodayForecast';
 import { Forecast, ForecastContextInterface } from './types';
+import WeekForecast from './components/WeekForecast/WeekForecast';
 
 export const ForecastContext = createContext<ForecastContextInterface | null>(null);
 var alreadyMadeRequest = false;
@@ -33,6 +34,7 @@ function App() {
         <ForecastContext.Provider value={{ data }}>
           <TemperatureTab />
           <TodayForecast />
+          <WeekForecast />
         </ForecastContext.Provider>
       </div>
     </div>
