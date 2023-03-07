@@ -1,3 +1,7 @@
+:root {
+  --background-color: #282c34;
+}
+
 .App {
   text-align: center;
   overflow: hidden;
@@ -15,7 +19,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: var(--background-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
