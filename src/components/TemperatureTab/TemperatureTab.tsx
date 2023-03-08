@@ -24,7 +24,7 @@ export default function TemperatureTab() {
         var today = new Date();
         setDate(dayNames[today.getDay()] + ", " + today.getDate());
         setMonth(monthNames[today.getMonth()]);
-
+        console.log('xd')
         /*SEARCH BY HOURS AND DATES
         for (var i in data!.hourly.time) {
             var date = new Date(data!.hourly.time[i]);
