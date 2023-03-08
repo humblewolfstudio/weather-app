@@ -45,6 +45,7 @@ function App() {
           setData(data);
           const nearCity = nearestCity({ latitude: lat, longitude: lon });
           setCity(nearCity.name);
+          console.log('xd')
         })
         .catch((err) => {
           console.log(err.message);
