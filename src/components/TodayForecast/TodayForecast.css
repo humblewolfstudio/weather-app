@@ -19,8 +19,31 @@
     overflow: scroll;
     height: 20vh;
     margin-top: 25px;
+    overflow-y: hidden;
 }
 
-.today-forecast-wrapper::-webkit-scrollbar {
-    display: none;
+@media (max-width: 500px) {
+    .today-forecast-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(60, 141, 196);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(93, 150, 189);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(147, 205, 243);
 }

@@ -3,10 +3,16 @@
   background-color: #282c34;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+}
+
 .App {
   text-align: center;
   overflow: hidden;
   height: 100vh;
+  max-width: 500px;
   max-height: -webkit-fill-available;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -14,6 +20,12 @@
   border: 5px solid #282c34;
   border-radius: 25px;
   background-color: #282c34;
+}
+
+@media (max-width: 500px) {
+  .App {
+    max-width: 360px !important;
+  }
 }
 
 .App-logo {

@@ -40,10 +40,3 @@ export interface WeeklyForecastInterface {
     weekDay: string,
     mediumTemperature: string
 }
-
-export interface city {
-    country: string,
-    name: string,
-    lat: string,
-    lon: string
-}

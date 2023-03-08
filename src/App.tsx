@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import './App.css';
 import TemperatureTab from './components/TemperatureTab/TemperatureTab';
 import TodayForecast from './components/TodayForecast/TodayForecast';
-import { city, Forecast, ForecastContextInterface } from './types';
+import { Forecast, ForecastContextInterface } from './types';
 import WeekForecast from './components/WeekForecast/WeekForecast';
 
 import chroma from 'chroma-js';
@@ -23,17 +23,10 @@ const calculateBackgroundColorByHour = () => {
   var aux = (hour * 100) / 24 / 100;
   setBackgroundColor(f(aux).toString());
 }
-/*
-const isDataInLocalStorage = () => {
-  if (localStorage.getItem('cityName')) return true;
-  else return false;
-}
-*/
 function App() {
 
   const [data, setData] = useState<Forecast>();
   const [cityName, setCity] = useState('');
-  //const [hasCoordinates, setHasCoordinates] = useState(false);
   const { coords, isGeolocationAvailable, isGeolocationEnabled } = useGeolocated({
     positionOptions: {
       enableHighAccuracy: false
@@ -42,7 +35,6 @@ function App() {
   })
 
   useEffect(() => {
-    //setHasCoordinates(!isGeolocationEnabled || !isGeolocationAvailable || isDataInLocalStorage())
     if (!alreadyMadeRequest && coords != undefined) {
       var lat = coords.latitude;
       var lon = coords.longitude;
@@ -53,29 +45,12 @@ function App() {
           setData(data);
           const nearCity = nearestCity({ latitude: lat, longitude: lon });
           setCity(nearCity.name);
-          //setHasCoordinates(true);
         })
         .catch((err) => {
           console.log(err.message);
         });
       alreadyMadeRequest = true;
-    }/* else if (!alreadyMadeRequest && isDataInLocalStorage()) {
-      var lat2 = localStorage.getItem('latitude');
-      var lon2 = localStorage.getItem('longitude');
-      calculateBackgroundColorByHour();
-      fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat2}&longitude=${lon2}&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m`)
-        .then((response) => response.json())
-        .then((data: Forecast) => {
-          setData(data);
-          const nearCity = nearestCity({ latitude: lat, longitude: lon });
-          setCity(nearCity.name);
-          setHasCoordinates(true);
-        })
-        .catch((err) => {
-          console.log(err.message);
-        });
-      alreadyMadeRequest = true;
-    }*/
+    }
   })
 
   return isGeolocationEnabled ? (
@@ -88,7 +63,7 @@ function App() {
         </ForecastContext.Provider>
       </div>
     </div>
-  ) : <SearchCity hasCoordinates={false} setHasCoordinates={() => { }} /> //TODO en cas de que no estigui activada, que t'aparegui un cercador i puguis buscar la ciutat
+  ) : <SearchCity/> //TODO en cas de que no estigui activada, que t'aparegui un cercador i puguis buscar la ciutat
 }
 
 export default App;
