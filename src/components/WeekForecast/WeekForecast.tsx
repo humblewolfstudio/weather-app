@@ -38,7 +38,7 @@ export default function WeekForecast() {
         }
         setWeekTemperatures(temperatures);
         madeForecast = true;
-    }, [])
+    })
 
     return (
         <div className="week-forecast-content">

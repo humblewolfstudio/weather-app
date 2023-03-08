@@ -30,7 +30,7 @@ export default function TodayForecast() {
         }
         setTemperaturesHourly(temperatures);
         madeForecast = true;
-    }, [])
+    })
 
     return (
         <div className="today-forecast-content">
