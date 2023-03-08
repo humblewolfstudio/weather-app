@@ -18,7 +18,7 @@ export default function TemperatureTab() {
 
     useEffect(() => {
         var data = Context.data;
-        if (data == undefined) return;
+        if (data === undefined) return;
 
         setTemperature(data.current_weather.temperature);
         var today = new Date();
@@ -34,7 +34,7 @@ export default function TemperatureTab() {
 
             setTemperature(data.hourly.temperature_2m[i]);
         }*/
-    })
+    }, [])
 
     return (
         <div className='temperature-content'>

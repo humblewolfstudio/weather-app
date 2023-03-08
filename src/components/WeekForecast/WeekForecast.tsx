@@ -27,7 +27,7 @@ export default function WeekForecast() {
     useEffect(() => {
         if (madeForecast) return;
         var data = Context.data;
-        if (data == undefined) return;
+        if (data === undefined) return;
 
         var temperatures = [];
 
@@ -38,7 +38,7 @@ export default function WeekForecast() {
         }
         setWeekTemperatures(temperatures);
         madeForecast = true;
-    })
+    }, [])
 
     return (
         <div className="week-forecast-content">

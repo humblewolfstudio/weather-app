@@ -27,7 +27,7 @@ function App() {
 
   const [data, setData] = useState<Forecast>();
   const [cityName, setCity] = useState('');
-  const { coords, isGeolocationAvailable, isGeolocationEnabled } = useGeolocated({
+  const { coords, isGeolocationEnabled } = useGeolocated({
     positionOptions: {
       enableHighAccuracy: false
     },
@@ -35,7 +35,7 @@ function App() {
   })
 
   useEffect(() => {
-    if (!alreadyMadeRequest && coords != undefined) {
+    if (!alreadyMadeRequest && coords !== undefined) {
       var lat = coords.latitude;
       var lon = coords.longitude;
       calculateBackgroundColorByHour();

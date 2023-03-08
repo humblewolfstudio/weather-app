@@ -16,7 +16,7 @@ export default function TodayForecast() {
     useEffect(() => {
         if (madeForecast) return;
         var data = Context.data;
-        if (data == undefined) return;
+        if (data === undefined) return;
         var today = new Date();
         var nElements = 24;
         var temperatures = [];
@@ -30,7 +30,7 @@ export default function TodayForecast() {
         }
         setTemperaturesHourly(temperatures);
         madeForecast = true;
-    })
+    }, [])
 
     return (
         <div className="today-forecast-content">
